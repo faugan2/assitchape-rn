@@ -7,13 +7,10 @@ import { Provider } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+import Splash from './screens/Splash';
+import Home from "./screens/Home";
+
+
 
 const Stack = createStackNavigator();
 
@@ -22,7 +19,8 @@ export default function App() {
     <Provider store={store}>
        <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="splash" component={Splash} options={{headerShown:false}} />
+          <Stack.Screen name="home" component={Home} options={{headerShown:false}} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
